@@ -1,5 +1,6 @@
 # ------------------------------------ Import Libraries -----------------------------------
-from bokeh.models import Button, ColumnDataSource, CheckboxGroup, Div, Label, LabelSet, Select, Slider, Tabs, Panel
+from msilib import text
+from bokeh.models import Button, ColumnDataSource, CheckboxGroup, Div, Label, Text, Select, Slider, Tabs, Panel
 from bokeh.transform import linear_cmap
 from bokeh.layouts import column, gridplot, row
 from bokeh.palettes import RdBu
@@ -146,9 +147,13 @@ def predict():
     )
 
     pred.renderers = []
-    
-    pred.vbar(x='x', top='y', source=predict_source, width=1, fill_alpha=0, line_alpha=0)
-    pred.add_layout(Label(text=f'Predicted Charges: ${df["charges"][0]:.2f}', x=0, y=int(df["charges"][0]/2), text_font_size='16pt', text_color=ghost_white))
+
+    pred.text(x=0, y=int(df['charges'][0]/2),
+        text=[f"Predicted Charges: ${df['charges'][0]:.2f}"],
+        text_color=ghost_white,
+        text_font_size='20pt'
+    )
+
 # -----------------------------------------------------------------------------------------
 
 

@@ -64,6 +64,7 @@ pred.axis.visible = False
 pred.xgrid.grid_line_color = None
 pred.ygrid.grid_line_color = None
 pred.toolbar.active_drag = None
+ghost_white = '#F8F8FF'
 # -----------------------------------------------------------------------------------------
 
 
@@ -128,9 +129,9 @@ def update():
 
     p.renderers = []
     if x_name == 'age' or x_name == 'children':
-        p.vbar(x='x', top='y', color=color_mapper, source=source, width=1, line_color='black')
+        p.vbar(x='x', top='y', color=color_mapper, source=source, width=1, line_color=ghost_white)
     else:
-        p.circle(x='x', y='y', color=color_mapper, source=source, size=7, line_color='black')
+        p.circle(x='x', y='y', color=color_mapper, source=source, size=7, line_color=ghost_white)
 
 def predict():
     age = age_input.value
@@ -147,7 +148,7 @@ def predict():
     pred.renderers = []
     
     pred.vbar(x='x', top='y', source=predict_source, width=1, fill_alpha=0, line_alpha=0)
-    pred.add_layout(Label(text=f'Predicted Charges: ${df["charges"][0]:.2f}', x=0, y=int(df["charges"][0]/2), text_font_size='16pt', text_color='black'))
+    pred.add_layout(Label(text=f'Predicted Charges: ${df["charges"][0]:.2f}', x=0, y=int(df["charges"][0]/2), text_font_size='16pt', text_color=ghost_white))
 # -----------------------------------------------------------------------------------------
 
 
@@ -173,6 +174,7 @@ tab2 = Panel(child=prediction, title='Charges prediction')
 root = Tabs(tabs=[tab1, tab2])
 
 update()
+curdoc().theme = 'dark_minimal'
 curdoc().add_root(root)
 curdoc().title = 'Medical Cost'
 # -----------------------------------------------------------------------------------------

@@ -1,0 +1,49 @@
+{% extends base %}
+
+{% block title %}Bokeh Gapminder Example{% endblock %}
+
+{% block postamble %}
+    <style>
+        /* Body */
+        body {
+            background-color: #15191C;
+            color: #f8f8ff;
+        }
+
+        /* .bk.bk-tab {
+            background-color: #3a3a3a;
+            color: #f8f8ff;
+        } */
+
+        /* .bk.bk-tab.active {
+            background-color: #adadad;
+            color: #15191C;
+        } */
+
+        /* Tabs */
+        .bk-root .bk-tab {
+            background-color: #3a3a3a;
+            color: #f8f8ff;
+        }
+        .bk-root .bk-tabs-header .bk-tab.bk-active{
+            background-color: #535353;
+            color: #f8f8ff;
+            font-weight: bold;
+        }
+        .bk-root .bk-tabs-header .bk-tab:hover{
+            background-color: #535353
+        }
+
+        /* Dropdown */
+        .bk.bk-input {
+            background-color: #535353;
+            color: #f8f8ff;
+            border: 1px solid #535353;
+        }
+
+        /* Slider */
+        .bk.noUi-target.noUi-ltr.noUi-horizontal.noUi-txt-dir-ltr {
+            background-color: #3a3a3a;
+        }
+    </style>
+{% endblock %}

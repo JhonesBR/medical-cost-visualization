@@ -3,7 +3,7 @@
 Medical cost visualization and prediction using [Dask](https://www.dask.org/) for data manipulation and [Bokeh](https://docs.bokeh.org/en/latest/) for visualization 
 
 <img src="images/graph.png"></img>
-<img src="images/prediction.png" width="80%"></img>
+<img src="images/prediction.png"></img>
 
 ## Setting Up
 

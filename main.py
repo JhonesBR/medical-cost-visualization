@@ -161,8 +161,8 @@ def predict():
 visualization_controls = [x_axis, highlight]
 for control in visualization_controls:
     control.on_change('value', lambda attr, old, new: update())
-inputs = column(*visualization_controls)
-visualization = column(inputs, p, sizing_mode='scale_both')
+inputs = column(*visualization_controls, sizing_mode='scale_width')
+visualization = column(inputs, p, sizing_mode='scale_height')
 
 calculate_button.on_click(lambda: predict())
 prediction = gridplot([
